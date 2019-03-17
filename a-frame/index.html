@@ -14,21 +14,26 @@
             <!-- Assets -->
             <a-assets>
                 <img crossorigin="anonymous" id="texture" src="https://i.imgur.com/mYmmbrp.jpg"> 
+                <a-asset-item id="obj" src="./models/alduin-dragon-obj/alduin-dragon.obj"></a-asset-item>
+                <a-asset-item id="mtl" src="./models/alduin-dragon-obj/alduin-dragon.mtl"></a-asset-item>
             </a-assets>
-        
+            
+            <a-entity environment></a-entity>
+
             <!-- Entity -->
-            <a-box position="0 2 -5" rotation="0 45 45" scale="4 4 4" src="#texture">
-                <a-animation attribute="position" direction="alternate" dur="2000" repeat="indefinite"
-                    to="0 2.2 -5"></a-animation>
+            <!--<a-box position="0 2 -10" rotation="0 45 45" scale="4 4 4" src="#texture">
                 <a-animation attribute="rotation" begin="click" dur="2000" to="360 405 45" repeat="indefinite"></a-animation>
             </a-box>
             
-            <a-sphere position="0 2 5" color="yellow" radius="1" rotation="0 0 0">
+            <a-sphere position="0 2 10" color="yellow" radius="1" rotation="0 0 0">
                 <a-animation attribute="position" begin="click" dur="1000" to="0 5 5" direction="alternate" repeat="indefinite"></a-animation>
-            </a-sphere>
+            </a-sphere>-->
 
-            <a-entity camera look-controls wasd-controls position="10 2 10" rotation="0 45 0" jump="">
-                <a-cursor color="#FAFAFA"></a-cursor>
+            <a-obj-model src="#obj" mtl="#mtl" position="-96.546 24.865 -10.000" scale="0.1 0.1 0.1">
+                <animation="to: -96.546 28.865 -10.000; property: position"></animation></a-obj-model>
+
+            <a-entity camera look-controls wasd-controls="fly: true" position="39.943 27.650 -12.990" rotation="-1.146 92.097 0.000" jump="">
+                <a-cursor color="#736C6A"></a-cursor>
             </a-entity>
 
         </a-scene>
