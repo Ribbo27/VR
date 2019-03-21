@@ -6,6 +6,7 @@ var ably = new Ably.Realtime({
   authUrl: '/auth',
   echoMessages: false
 });
+
 ably.connection.once('connected', function () {
     myId = ably.auth.tokenDetails.clientId;
     startApp(myId)
